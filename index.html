@@ -2,7 +2,10 @@
 <html>
 <head>
 <title>Learn v2.0</title>
+<link href="bootstrap.css" media="all" rel="stylesheet" type="text/css" />
 <link href="index.css" media="all" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="bootstrap.js"></script>
 </head>
 <body>
 <div class="title">
@@ -32,19 +35,35 @@
   <h2>Impacts</h2>
   <p>What impact does separating concerns have?</p>
   <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
+    <li><a id="popover1" rel="popover" data-title="testability" data-content="as we separate our concerns it becomes easier to the code because each method is now doing less.">testability</a></li>
+    <li><a id="popover2" rel="popover" data-title="number of tests" data-content="the separation of concerns will naturally result in more discrete functions; each of these will need to be tested">number of tests</a></li>
+    <li><a id="popover3" rel="popover" data-title="maintainability" data-content="code that only does one thing is easier to maintain than code that tries to do multiple things">maintainability</a></li>
+    <li><a id="popover4" rel="popover" data-title="code simplicity" data-content="code that only does one thing is more simple than code that does multiple things">code simplicity</a></li>
+    <li><a id="popover5" rel="popover" data-title="block length" data-content="each block of code will become shorter as it is split into it's constituent parts">block length</a></li>
+    <li><a id="popover6" rel="popover" data-title="readability" data-content="code that only does one thing will take less time to be understood">readability</a></li>
+    <li><a id="popover7" rel="popover" data-title="time to write" data-content="code that does fewer things takes less time to write than code that does multiple things">time to write</a></li>
+    <li><a id="popover8" rel="popover" data-title="time to make it work" data-content="code that is easier to test and simpler will take less time to get working">time to make it work</a></li>
   </ul>
+  <script>$('#popover1').popover()</script>
+  <script>$('#popover2').popover()</script>
+  <script>$('#popover3').popover()</script>
+  <script>$('#popover4').popover()</script>
+  <script>$('#popover5').popover()</script>
+  <script>$('#popover6').popover()</script>
+  <script>$('#popover7').popover()</script>
+  <script>$('#popover8').popover()</script>
 </div>
 <div class="heuristics">
   <h2>Heuristics</h2>
   <p>How do I know when I've failed to separate concerns?</p>
+  <ul>
+    <li>number of parameters</li>
+    <li>function length</li>
+    <li>single responsibility principal</li>
+    <li>touch points</li>
+    <li>domain language usage</li>
+    <li>composite scopes</li>
+  </ul>
 </div>
 </body>
 </html>
