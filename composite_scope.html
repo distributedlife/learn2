@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Learn v2.0</title>
+<link href="bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+<link href="index.css" media="all" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="bootstrap.js"></script>
+</head>
+<body>
+<div class="title">
+  <h1>Heuristic: Composite Block</h1>
+</div>
+<div class="notice">
+  <p>Always remember that a heuristic should not be applied like a rule. It's something that when applied may give you insight; but is never gauranteed to.</p>
+</div>
+<div class="before">
+  <h2>Before</h2>
+  <div class="description">
+    <p>A composite block is a block of code that contains both assignments (a = 5) and methods (calculate_total()). This can hint towards multiple things going on within the block.</p>
+    <p>Let's look at an example. Our before code gets a set of data, then iterates over it, then gets more data, then iterates over the new data before doing the actual desired effect.</p>
+  </div>
+  <script src="https://gist.github.com/3999487.js?file=before.rb"></script>
+</div>
+<div class="first pass">
+  <h2>First Pass</h2>
+  <div class="description">
+    <p>Our first step is to pull the assignments into their own blocks.</p>
+    <p>This gives us two blocks that are getting data and then one that acts upon that data. However if we look closely at the remove_duplicates block we are getting some data; iterating over it; getting some more before acting upon. We can make another pass here to clear this up.
+    <p>In terms of testability it's now much easier to test because you can stub the 'duplicate_sets' call to return what you wanted rather than stubbing a part of ActiveRecord.
+  </div>
+  <script src="https://gist.github.com/3999487.js?file=after.rb"></script>
+</div>
+<div class="second pass">
+  <h2>Second Pass</h2>
+  <div class="description">
+    <p>We change the remove_duplicates (our original) block to take it's data rather than get it's own; this means it's now only doing one thing and is even easier to test as know longer need to stub.</p>
+    <p>The delete_all_but_one_record_from_set is a little different still; it gets data; iterates and acts.</p>
+    <p>The advantage of the delete_all_but_one_record_from_set is that it is well named and removes the need to have the comment.</p>
+  </div>
+  <script src="https://gist.github.com/3999487.js?file=after2.rb"></script>
+</div>
+<div class="summary">
+  <h2>Summary</h2>
+  <div class="description">
+    <ul>
+      <li>duplicate_sets - gets data</li>
+      <li>identical_translations_matching_record - gets data</li>
+      <li>delete_all_but_one_record_from_set - gets data; does something to it (this still does 2 things)</li>
+      <li>remove_duplicates - does something to given data</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
