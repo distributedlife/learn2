@@ -6,64 +6,107 @@
 <link href="index.css" media="all" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="bootstrap.js"></script>
+<script src="http://use.edgefonts.net/parisienne.js"></script>
 </head>
 <body>
-<div class="title">
-  <h1>Separating Concerns</h1>
-</div>
-<div class="description">
-  <p>In computer science, separation of concerns (SoC) is a design principle that comprises the process of separating a computer program into distinct features that overlap in functionality as little as possible. A concern is any piece of interest or focus in a program. Typically, concerns are synonymous with features or behaviors. Progress towards SoC is traditionally achieved through modularity of programming and encapsulation (or "transparency" of operation), with the help of information hiding. Layered designs in information systems are also often based on separation of concerns (e.g., presentation layer, business logic layer, data access layer, database layer).</p>
-</div>
-<div class="extremes">
-  <h2>Taking this to the extreme</h2>
-  <p>What would happen if we took this to the extreme; as in we over-applied it or under-applied it<p>
-  <div class="under-applied">
-    <p>&minus;&#x221E;</p>
-    <p>All our code is in one method</a>
+<div class="container">
+  <div class="span12 left-col">
+    <div class="title">
+      <h1>Separating Concerns</h1>
+    </div>
   </div>
-  <div class="over-applied">
-    <p>+&#x221E;</p>
-    <p>We have single line methods calling other methods</p>
+
+  <div class="row">
+
+    <div class="description">
+      <h2>So what is it?</h2>
+      <p class="lead">In computer science, separation of concerns (SoC) is a design principle that comprises the process of separating a computer program into distinct features that overlap in functionality as little as possible. A concern is any piece of interest or focus in a program. Typically, concerns are synonymous with features or behaviors. Progress towards SoC is traditionally achieved through modularity of programming and encapsulation (or "transparency" of operation), with the help of information hiding. Layered designs in information systems are also often based on separation of concerns (e.g., presentation layer, business logic layer, data access layer, database layer).</p>
+    </div>
+
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <div class="span6">
+
+      <div class="extremes">
+        <h2>Taking this to the extreme</h2>
+        <p>What would happen if we took this to the extreme; as in we over-applied it or under-applied it<p>
+        <div class="span2 pull-left">
+          <div class="under-applied">
+            <p class="center">&minus;&#x221E;</p>
+            <p>All our code is in one method</p>
+          </div>
+        </div>
+        <div class="span2 pull-right">
+          <div class="over-applied">
+            <p class="center">+&#x221E;</p>
+            <p>We have single line methods calling other methods</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="span6">
+
+      <div class="video">
+        <h2>A short video</h2>
+        <iframe class="youtube-player" type="text/html" width="460" height="385" src="http://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <div class="span6">
+
+      <div class="impacts">
+        <h2>Impacts</h2>
+        <p>What impact does separating concerns have?</p>
+        <ul>
+          <li><a id="popover1" rel="popover" data-title="testability" data-content="as we separate our concerns it becomes easier to the code because each method is now doing less.">testability</a></li>
+          <li><a id="popover2" rel="popover" data-title="number of tests" data-content="the separation of concerns will naturally result in more discrete functions; each of these will need to be tested">number of tests</a></li>
+          <li><a id="popover3" rel="popover" data-title="maintainability" data-content="code that only does one thing is easier to maintain than code that tries to do multiple things">maintainability</a></li>
+          <li><a id="popover4" rel="popover" data-title="code simplicity" data-content="code that only does one thing is more simple than code that does multiple things">code simplicity</a></li>
+          <li><a id="popover5" rel="popover" data-title="block length" data-content="each block of code will become shorter as it is split into it's constituent parts">block length</a></li>
+          <li><a id="popover6" rel="popover" data-title="readability" data-content="code that only does one thing will take less time to be understood">readability</a></li>
+          <li><a id="popover7" rel="popover" data-title="time to write" data-content="code that does fewer things takes less time to write than code that does multiple things">time to write</a></li>
+          <li><a id="popover8" rel="popover" data-title="time to make it work" data-content="code that is easier to test and simpler will take less time to get working">time to make it work</a></li>
+        </ul>
+        <script>$('#popover1').popover()</script>
+        <script>$('#popover2').popover()</script>
+        <script>$('#popover3').popover()</script>
+        <script>$('#popover4').popover()</script>
+        <script>$('#popover5').popover()</script>
+        <script>$('#popover6').popover()</script>
+        <script>$('#popover7').popover()</script>
+        <script>$('#popover8').popover()</script>
+      </div>
+
+    </div>
+
+    <div class="span6">
+
+      <div class="heuristics">
+        <h2>Heuristics</h2>
+        <p>What can I use to determine if I have no separated my concerns enough?</p>
+        <ul>
+          <li><a href="composite_scope.html">composite scopes</a></li>
+          <li>number of parameters</li>
+          <li>function length</li>
+          <li>single responsibility principal</li>
+          <li>touch points</li>
+          <li>domain language usage</li>
+        </ul>
+      </div>
+
+    </div>
   </div>
 </div>
-<div class="video">
-  <h2>A short video</h2>
-  <iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/oHg5SJYRHA0" frameborder="0">
-  </iframe>
-</div>
-<div class="impacts">
-  <h2>Impacts</h2>
-  <p>What impact does separating concerns have?</p>
-  <ul>
-    <li><a id="popover1" rel="popover" data-title="testability" data-content="as we separate our concerns it becomes easier to the code because each method is now doing less.">testability</a></li>
-    <li><a id="popover2" rel="popover" data-title="number of tests" data-content="the separation of concerns will naturally result in more discrete functions; each of these will need to be tested">number of tests</a></li>
-    <li><a id="popover3" rel="popover" data-title="maintainability" data-content="code that only does one thing is easier to maintain than code that tries to do multiple things">maintainability</a></li>
-    <li><a id="popover4" rel="popover" data-title="code simplicity" data-content="code that only does one thing is more simple than code that does multiple things">code simplicity</a></li>
-    <li><a id="popover5" rel="popover" data-title="block length" data-content="each block of code will become shorter as it is split into it's constituent parts">block length</a></li>
-    <li><a id="popover6" rel="popover" data-title="readability" data-content="code that only does one thing will take less time to be understood">readability</a></li>
-    <li><a id="popover7" rel="popover" data-title="time to write" data-content="code that does fewer things takes less time to write than code that does multiple things">time to write</a></li>
-    <li><a id="popover8" rel="popover" data-title="time to make it work" data-content="code that is easier to test and simpler will take less time to get working">time to make it work</a></li>
-  </ul>
-  <script>$('#popover1').popover()</script>
-  <script>$('#popover2').popover()</script>
-  <script>$('#popover3').popover()</script>
-  <script>$('#popover4').popover()</script>
-  <script>$('#popover5').popover()</script>
-  <script>$('#popover6').popover()</script>
-  <script>$('#popover7').popover()</script>
-  <script>$('#popover8').popover()</script>
-</div>
-<div class="heuristics">
-  <h2>Heuristics</h2>
-  <p>How do I know when I've failed to separate concerns?</p>
-  <ul>
-    <li><a href="composite_scope.html">composite scopes</a></li>
-    <li>number of parameters</li>
-    <li>function length</li>
-    <li>single responsibility principal</li>
-    <li>touch points</li>
-    <li>domain language usage</li>
-  </ul>
-</div>
+
 </body>
 </html>

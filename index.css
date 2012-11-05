@@ -1,3 +1,25 @@
 .title {
-  font-size: 1.0em;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.center {
+  text-align: center;
+}
+
+.left-col {
+  margin-bottom: 0 ;
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow:0;
+  -moz-box-shadow: 0;
+  box-shadow: 0 0 0 0 #000 ;
+}
+
+h2 {
+  font-family: parisienne, serif;
+  font-size: 3.0em;
+  text-align: center;
 }
